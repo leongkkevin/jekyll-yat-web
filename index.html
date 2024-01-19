@@ -1,8 +1,176 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
-title: Home
-banner: "/assets/images/banners/home.jpeg"
+layout: post-clear
+title: Welcome :D
+subtitle: inspi-reel
+banner:
+  video: https://vjs.zencdn.net/v/oceans.mp4
+  loop: true
+  volume: 0.0
+  start_at: 8.5
+  image: https://bit.ly/3xTmdUP
+  opacity: 0.618
+  background: "#000"
+  height: "100vh"
+  min_height: "38vh"
+  heading_style: "font-size: 4.25em; font-weight: bold; text-decoration: underline"
+  subheading_style: "color: gold"
+top: 1
+sidebar: []
 ---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .image-container {
+            width: 100%;
+            margin: auto;
+            overflow-x: hidden;
+        }
+        .image-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 0; /* Remove the table outlines */
+            background-color: transparent;
+        }
+        .image-row {
+            height: 250px; /* Set the width of each row to 300px */
+            display: flex;
+            margin: auto; /* Center the row within the container */
+        }
+        .image-cell {
+            width: 50%;
+            height: auto;
+            text-align: center;
+            padding: 1px; /* Add padding around each image */
+            margin: 1px; /* Add margin around each image */
+            border: none;
+        }
+        .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+        .image-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            margin: 0;
+            transition: filter 0.3s;
+        }
+        .image-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            line-height: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .image-wrapper:hover .image-content img {
+            filter: brightness(80%)blur(5px);
+        }
+        .home-title{
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .home-subtitle{
+            font-size: 20px;
+            font-weight: 50;
+        }
+        .home-text{
+            font-size: 18px;
+            font-weight: 50;
+        }
+    </style>
+</head>
+<body>
+
+<div class="home-title">Hi. I'm Kevin. It's nice to meet you.</div>
+<br>
+<div class="home-subtitle">I hope you enjoy exploring this website I coded myself and find my works as interesting as I do!  </div>
+<br>
+<div class="home-text">Here are some of my <b>favorite projects:</b> </div>
+
+<div class="image-container">
+    <table class="image-table" id="imageTable">
+    </table>
+</div>
+
+<script>
+    // Image data with URLs and text
+    const imageData = [
+        { url: '/egg_drop_soup.html', imageSrc: '/assets/images/banners/egg-drop-soup.jpeg', text: 'Egg Drop Soup' },
+        { url: '/lsg_sky_chefs.html', imageSrc: 'https://www.foodandwine.com/thmb/CBaYxb75n0zV6FCEPJM7_6pnKU8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Yes-Food-and-Drinks-Really-Do-Taste-Differently-on-Planes-Heres-Why-FT-BLOG0723-8b6f62078e50465abb98720fea9e93b7.jpg', text: 'LSG Sky Chefs' },
+        { url: 'https://example.com/page3', imageSrc: '/assets/images/banners/home.jpeg', text: 'Text for Image 3' },
+        { url: 'https://example.com/page4', imageSrc: '/assets/images/banners/home.jpeg', text: 'Text for Image 4' }
+    ];
+
+    // Function to create a table cell with image and text
+    function createTableCell(imageData) {
+        const td = document.createElement('td');
+        td.classList.add('image-cell');
+
+        const div = document.createElement('div');
+        div.classList.add('image-wrapper');
+
+        const a = document.createElement('a');
+        a.href = imageData.url;
+
+        const imgContent = document.createElement('div');
+        imgContent.classList.add('image-content');
+
+        const img = document.createElement('img');
+        img.src = imageData.imageSrc;
+        img.alt = `Image ${imageData.imageSrc}`;
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
+        img.style.margin = '0';
+
+        const textDiv = document.createElement('div');
+        textDiv.classList.add('image-text');
+        textDiv.textContent = imageData.text;
+
+        div.appendChild(a);
+        a.appendChild(imgContent);
+        imgContent.appendChild(img);
+        a.appendChild(textDiv);
+        td.appendChild(div);
+
+        return td;
+    }
+
+    // Function to populate the table with cells
+    function populateTable(tableId, imageData) {
+        const table = document.getElementById(tableId);
+
+        for (let i = 0; i < imageData.length; i += 2) {
+            const tr = document.createElement('tr');
+            tr.classList.add('image-row');
+            tr.appendChild(createTableCell(imageData[i]));
+
+            // Check if there is another image for the next cell
+            if (i + 1 < imageData.length) {
+                tr.appendChild(createTableCell(imageData[i + 1]));
+            }
+
+            table.appendChild(tr);
+        }
+    }
+
+    // Populate the table with images and text
+    populateTable('imageTable', imageData);
+</script>
+
+</body>
+</html>
+
+

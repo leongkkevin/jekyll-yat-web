@@ -1,6 +1,11 @@
 <header class="post-header-clear">
   <h1 class="post-title p-name" itemprop="name headline">{{ heading | default: page.title | escape }}</h1>
+
+  {%- if page.subtitle == 'inspi-reel' -%}
+  <h2 class="post-subtitle">Take a second to watch my <a href="\what_is_inspi_reel.html">"inspi-reel"</a></h2>
+  {%- else -%}
   <h2 class="post-subtitle">{{ subheading | default: page.subtitle | escape }}</h2>
+  {%- endif -%}
 
   {%- if page.tags.size > 0 -%}
   <div class="post-tags">

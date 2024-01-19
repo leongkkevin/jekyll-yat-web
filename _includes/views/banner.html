@@ -47,6 +47,7 @@
     html[data-theme="dark"] .page-banner .page-banner-img > *:first-child {
       opacity: {{ banner_opacity | times: 0.718 }};
     }
+
   </style>
   {%- endif -%}
   {%- if banner_heading_style -%}
@@ -63,7 +64,13 @@
     }
   </style>
   {%- endif -%}
+
   <section class="page-banner">
+    <style>
+      html .page-banner-img{
+        filter: brightness(80%) blur(3px);
+      }
+    </style>
     <div class="page-banner-img">
       {%- if banner_video -%}
         <video
@@ -113,8 +120,15 @@
         {%- include {{ banner_html }} -%}
 
         {%- else -%}
+          <style>
+            .page-banner-heading{
+              font-size: 80px;
+              font-weight: bold;
+            }
+          </style>
 
           <div class="page-banner-default">
+ 
             <h1 class="page-banner-heading">
               {{ heading | default: page.title | escape }}
             </h1>
