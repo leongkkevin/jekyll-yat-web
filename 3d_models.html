@@ -1,0 +1,146 @@
+---
+layout: default
+title: 3D Modeling and Animation
+subtitle:
+banner: "/assets/images/banners/mr-roboto-banner.jpg"
+---
+    
+{%- include extensions/photo-swipe.html -%}
+
+<style>
+    .model-txt{
+        font-size: 18px;
+    }
+</style>
+
+<div class="model-txt">
+    In Spring 2019, I dove deep into <b>Autodesk Maya</b> - and learned several modeling and animation skills!
+    <br>
+    Below you will find a collection of the projects I did to expand my 3D modeling and animation skills.
+    Feel free to click on the slideshows and discover the processes I took to learn Autodesk Maya!
+</div>
+<br><br>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        #modeling-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+        }
+
+        #modeling-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+        }
+
+        .modeling-rectangular-button {
+            width: 200px; /* Adjusted button width */
+            height: 80px;
+            border-radius: 10px;
+            background-color: #ddd; /* Light gray background */
+            color: #333; /* Dark text color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s, color 0.3s; /* Add transition for smoother color change */
+            margin: 5px; /* Adjust margins */
+            font-style: italic;
+        }
+
+        .modeling-rectangular-button:hover {
+            background-color: #aaa; /* Darker gray on hover */
+            color: #fff; /* White text on hover */
+        }
+
+        #modeling-iframe {
+            width: 100%; /* Adjusted iframe width */
+            height: 50vh;
+            border: none;
+            margin-top: 20px;
+        }
+
+        #text-display {
+            font-size: 40px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #text-display2 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="text-display2">Please select a project from the buttons below!</div>
+<br>
+
+<!-- Modeling Section -->
+<div id="modeling-section">
+    <!-- Button Container -->
+    <div id="modeling-container">
+        <!-- Top Row -->
+        <button class="modeling-rectangular-button" onclick="changeSlide('https://docs.google.com/presentation/d/e/2PACX-1vQgKlyWz48gHypJlqTKj1qZc6o8cRByXwI_4bJsF6DXnDG9u0pJkbze4RRED5ZIhmvvDblW5iqQLh6p/embed?start=false&loop=false&delayms=3000', 'Mr. Roboto')">Mr. Roboto</button>
+        <button class="modeling-rectangular-button" onclick="changeSlide('https://docs.google.com/presentation/d/e/2PACX-1vSUanALPqfX_3jXv8pBbWhEesmDFSn9e4Wv7FBJkNptNRUZlX0i7EGBITAtcPhAlJhu-Ge8BdN_W_wS/embed?start=false&loop=false&delayms=3000', 'The Dancing Knight')">The Dancing Knight</button>
+        <button class="modeling-rectangular-button" onclick="changeSlide('https://docs.google.com/presentation/d/e/2PACX-1vT-cywOtkIeyHuK_baHB4MgqTRJcx0KfAyaSXJv4jSCeeTEaZN4BJZQWzVWbT7748BVAfOOk4BjsD3B/embed?start=false&loop=false&delayms=3000', 'Pirate Flag')">Pirate Flag</button>
+        <button class="modeling-rectangular-button" onclick="changeSlide('https://docs.google.com/presentation/d/e/2PACX-1vQKPJ6tKo4iMoi0Ss7DdXV-mItr4igAgl8g8oDmBTPyj-nPZ3z9-ko0Dw-Tjhwxqnl4FXNMUj2o7GVb/embed?start=false&loop=false&delayms=3000', 'Luxo Jr.')">Luxo Jr.</button>
+        <!-- Bottom Row -->
+        <button class="modeling-rectangular-button" onclick="changeSlide('https://docs.google.com/presentation/d/e/2PACX-1vRMtdoTfyuMLDfxfBkqfWWEcGoPYd18RG4L_zCxH7uCIqg9bXeH2CvI4R89J7XPR0GIbFiYMF3lNrTN/embed?start=false&loop=false&delayms=3000', '7-11 Logo')">7-11 Logo</button>
+        <button class="modeling-rectangular-button" onclick="changeSlide('https://docs.google.com/presentation/d/e/2PACX-1vRpI6zXM6ZkBz8hO4F8dbp0VdwQ5ykP6WFOKkTIP824ZlBcaIZNkCRGJWaFinbRpeyq3jEmK9PKmMig/embed?start=false&loop=false&delayms=3000', 'MASH Particles')">MASH Particles</button>
+        <button class="modeling-rectangular-button" onclick="changeSlide('https://docs.google.com/presentation/d/e/2PACX-1vSCc5wdSevz8Wa_NAvtb7dNFH6RVfRxvJS2ZCQhehTNZYHK5QITVsC0ARewRItcUggZIDs66hK-Aevx/embed?start=false&loop=false&delayms=3000', 'Link\'s Sword and Shield')">Link's Sword and Shield</button>
+    </div>
+
+    <br><br>
+    <!-- Text Display -->
+    <div id="text-display"> </div>
+    <!-- Iframe -->
+    <iframe id="modeling-iframe" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+
+<script>
+    // Function to change the src of the iframe
+    function changeSlide(newSrc, newText) {
+        document.getElementById('modeling-iframe').src = newSrc;
+        // Change the text of the display div
+        document.getElementById('text-display').textContent = newText;
+    }
+</script>
+
+<div class="model-txt">
+    I've always had a deep-seeded love for animation, and I'm so glad I got to dip my hands in the skills needed to animate!
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+

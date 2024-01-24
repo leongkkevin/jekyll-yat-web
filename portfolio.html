@@ -4,7 +4,8 @@
 
 layout: default
 title: My Portfolio
-banner: "/assets/images/banners/home.jpeg"
+subtitle: Here's some of my favorite art!
+banner: "/assets/images/banners/my-fav-art.jpg"
 ---
 
 <!DOCTYPE html>
@@ -58,6 +59,7 @@ banner: "/assets/images/banners/home.jpeg"
             font-size: 50px;
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            line-height: 0.9;
         }
         .image-wrapper:hover .image-content img {
             filter: brightness(80%)blur(5px);
@@ -79,7 +81,7 @@ banner: "/assets/images/banners/home.jpeg"
 </head>
 <body>
 
-<div class="home-title">Please take look at my portfolio below!</div>
+<div class="home-title">Take look at my creative portfolio below!</div>
 
 <div class="image-container">
     <table class="image-table" id="imageTable">
@@ -90,7 +92,7 @@ banner: "/assets/images/banners/home.jpeg"
     // Image data with URLs and text
     const imageData = [
         { url: '/egg_drop_soup.html', imageSrc: '/assets/images/banners/egg-drop-soup.jpeg', text: 'Egg Drop Soup' },
-        { url: 'https://example.com/page2', imageSrc: '/assets/images/banners/home.jpeg', text: 'Text for Image 2' },
+        { url: '/3d_models.html', imageSrc: '/assets/images/banners/mr-roboto-banner.jpg', text: '3D Models and Animation' },
         { url: 'https://example.com/page3', imageSrc: '/assets/images/banners/home.jpeg', text: 'Text for Image 3' },
         { url: 'https://example.com/page4', imageSrc: '/assets/images/banners/home.jpeg', text: 'Text for Image 4' }
     ];
